@@ -1,6 +1,20 @@
 package commonLibs.contracts;
 
-public interface IDriver {
+public interface CommonDriver implements Driver {
+	
+	private WebDriver driver;
+	
+	private int pageLoadTimeout;
+	
+	private int elementDetectionTimeout;
+	
+	public CommonDriver(String browserType) throws Exception {
+		
+		elementDetectionTimeout = 10;
+		pageloadTimeout = 20;
+		
+		browserType = browserType.trim()
+	}
 	
 	public void navigateToFirstUrl(String url) throws Exception;
 
